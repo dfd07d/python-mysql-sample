@@ -3,6 +3,7 @@ image: daocloud/ci-python:2.7
 services:
   - mysql
 
+
 env:
   - MYSQL_USERNAME="root"
   - MYSQL_PASSWORD=""
@@ -15,4 +16,3 @@ script:
   - nosetests test.py --with-xunit --xunit-file=${TEST_DIR}/result.xml
   - coverage run --branch test.py
   - coverage xml -o ${TEST_DIR}/coverage.xml test.py
-
